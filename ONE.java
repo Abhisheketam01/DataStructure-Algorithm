@@ -32,3 +32,74 @@ O(N) → Linear (slower than log, but still manageable)
 O(N²) → Quadratic (can be deadly for large inputs)
 
 O(2ⁿ) → Exponential (avoid unless you like pain) -->
+
+lets start the game bro--
+  
+1]Time Complexity of a Single for Loop
+  
+  public class SingleLoopComplexity {
+    public static void main(String[] args) {
+        int n = 10; // You can change this to test with bigger N
+
+        // Single loop - runs N times
+        System.out.println("Printing numbers from 1 to " + n);
+
+        for (int i = 1; i <= n; i++) {
+            System.out.println(i); // This executes exactly N times
+        }
+
+        /*
+         * Time Complexity Analysis:
+         * -------------------------
+         * The loop runs from 1 to n (inclusive), so total iterations = n.
+         * Each iteration does a constant amount of work (printing).
+         *
+         * Therefore:
+         * Time Complexity = O(n)  → Linear Time
+         *
+         * Space Complexity Analysis:
+         * --------------------------
+         * We are only using a few variables (n, i) → constant space usage.
+         * Space Complexity = O(1) → Constant Space
+         */
+    }
+}
+
+2]	🔁 Time Complexity of Nested for Loops
+
+public class NestedLoopComplexity {
+    public static void main(String[] args) {
+        int n = 5; // You can change this to see how execution grows
+
+        // Nested loops example
+        System.out.println("Printing all pairs (i, j):");
+
+        for (int i = 1; i <= n; i++) {        // Outer loop → runs n times
+            for (int j = 1; j <= n; j++) {    // Inner loop → runs n times for each i
+                System.out.print("(" + i + "," + j + ") ");
+            }
+            System.out.println();
+        }
+
+        /*
+         * Time Complexity Analysis:
+         * -------------------------
+         * Outer loop runs n times.
+         * Inner loop runs n times for EACH iteration of outer loop.
+         *
+         * Total operations = n * n = n²
+         *
+         * Therefore:
+         * Time Complexity = O(n²) → Quadratic Time
+         *
+         * Space Complexity Analysis:
+         * --------------------------
+         * Only variables i, j, n are stored → constant space usage.
+         * Space Complexity = O(1) → Constant Space
+         */
+    }
+}
+
+
+
+  
