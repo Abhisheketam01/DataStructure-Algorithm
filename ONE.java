@@ -65,7 +65,7 @@ lets start the game bro--
     }
 }
 
-2]	🔁 Time Complexity of Nested for Loops
+2]🔁 Time Complexity of Nested for Loops
 
 public class NestedLoopComplexity {
     public static void main(String[] args) {
@@ -100,6 +100,37 @@ public class NestedLoopComplexity {
     }
 }
 
+3] Time Complexity of Loop with i *= 2 (Logarithmic)
+public class LogarithmicLoopComplexity {
+    public static void main(String[] args) {
+        int n = 100; // Change to test bigger numbers
+
+        System.out.println("Loop with i *= 2:");
+
+        for (int i = 1; i <= n; i *= 2) { // i doubles each time
+            System.out.println("i = " + i);
+        }
+
+        /*
+         * Time Complexity Analysis:
+         * -------------------------
+         * i starts at 1 and is multiplied by 2 each time.
+         * Number of times loop runs:
+         * 1 → 2 → 4 → 8 → ... → n
+         *
+         * After k iterations: i = 2^k
+         * Stop when 2^k > n → k ≈ log₂(n)
+         *
+         * Therefore:
+         * Time Complexity = O(log n) → Logarithmic Time
+         *
+         * Space Complexity Analysis:
+         * --------------------------
+         * Only i and n are stored → constant space usage.
+         * Space Complexity = O(1)
+         */
+    }
+}
 
 
   
