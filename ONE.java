@@ -560,5 +560,45 @@ Inner loop runs n times for each outer → n × ( (n+1) + n + print )
 = 3 × (4 + 3 + 3) = 30 steps
 👉 General → ≈ n² steps → O(n²)
 
+  next topic - Best Case, Worst Case, Average Case Analysis
+  
+  🎯 Best, Worst, and Average Case Analysis
+1️⃣ Best Case
+
+The minimum number of steps the algorithm takes.
+
+Happens when the input is the most favorable.
+👉 Example: Searching x=10 in array [10,20,30,...].
+
+Found at first index → only 1 comparison.
+
+Time Complexity: O(1)
+
+2️⃣ Worst Case
+
+The maximum number of steps the algorithm may take.
+
+Happens when the input is the least favorable.
+👉 Example: Searching x=100 in [10,20,30,...,90].
+
+Element not found, loop runs full length.
+
+Time Complexity: O(n)
+
+3️⃣ Average Case
+
+Expected number of steps for a random input.
+
+Typically:
+
+If element exists → on average, found in middle.
+
+If element doesn’t exist → checked full array.
+👉 Formula for linear search (probability uniform):
+
+Average = (1 + 2 + 3 + ... + n)/n = (n+1)/2 ≈ n/2
+
+Time Complexity: O(n)
+
   
   
