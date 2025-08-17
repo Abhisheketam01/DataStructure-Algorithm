@@ -372,13 +372,16 @@ ArrayList<Integer> list = new ArrayList<>();
 
 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
   Auxiliary Space vs Total Space
+  
   📦 1. Total Space Complexity
 ➡️ The total memory used by the algorithm/program.
 It includes:
 Input size (array, matrix, etc.)
 Auxiliary space (extra temporary storage)
+  
 📦 2. Auxiliary Space Complexity
-➡️ The extra space used by the algorithm apart from the input itself.
+  
+The ➡️ extra space used by the algorithm apart from the input itself.
 Includes temporary variables, recursion stack, extra arrays/lists.
 Does NOT count the input storage.
 
@@ -408,23 +411,28 @@ public class SpaceExample1 {
 }
 
 ✅ Example 2 — Recursive Factorial
-public class SpaceExample2 {
-    static int factorial(int n) {
+  
+import java.util.Scanner;
+
+public class array1 {
+    static int factorial(int n ){
+        
+        
         if (n == 0) return 1;
-        return n * factorial(n - 1);
+        return n * factorial(n-1);
     }
-
+    
     public static void main(String[] args) {
-        int n = 5;
-        System.out.println("Factorial = " + factorial(n));
-
-        /*
-         * Space Analysis:
-         * ---------------
-         * Input = integer 'n' → O(1)
-         * Auxiliary space = O(n) (recursion stack of depth n)
-         * Total space = O(1) + O(n) = O(n)
-         */
+        Scanner sc = new Scanner(System.in);
+        
+        
+        System.out.println("Enter value of n : " );
+        int n = sc.nextInt();
+        
+        System.out.println("Factorial of " + n + " is " + factorial(n));
+        
+        sc.close();
+        
     }
 }
 
@@ -459,11 +467,15 @@ Factorial (recursion)	O(1)	O(n)	O(n)
 Doubling array	O(n)	O(n)	O(n)
 
   next topic ] Time Complexity of Searching in Unsorted Array (Linear)
+  
   key idea =  🔍 Linear Search
+  
   Works on unsorted arrays.
+  
 We check each element one by one until:
 We find the target, OR
 We reach the end of the array.
+  
 ⏳ Time Complexity
 Best Case (target at first index) → O(1)
 Worst Case (target at last index or not present) → O(n)
@@ -482,7 +494,7 @@ public class LinearSearch {
         }
         return -1; // Not found
     }
-
+  
     public static void main(String[] args) {
         int[] arr = {23, 45, 12, 67, 34, 89, 10};
         int target = 67;
@@ -494,7 +506,7 @@ public class LinearSearch {
         } else {
             System.out.println("Element " + target + " not found.");
         }
-
+      
         /*
          * Time Complexity:
          * ----------------
