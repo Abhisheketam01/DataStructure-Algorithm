@@ -466,6 +466,8 @@ Sum of array	O(n)	O(1)	O(n)
 Factorial (recursion)	O(1)	O(n)	O(n)
 Doubling array	O(n)	O(n)	O(n)
 
+  ***************************************************************************************************************************************
+
   next topic ] Time Complexity of Searching in Unsorted Array (Linear)
   
   key idea =  🔍 Linear Search
@@ -520,7 +522,7 @@ public class LinearSearch {
          */
     }
 }
-
+*******************************************************************************************************************************
 
 next topic - ]
 
@@ -612,5 +614,74 @@ Average = (1 + 2 + 3 + ... + n)/n = (n+1)/2 ≈ n/2
 
 Time Complexity: O(n)
 
-  
+  ****************************************************************************************************************************************************************
+
+  Calculate Exact No. of Steps for Small Programs (Dry Run)
+🎯 Calculate Exact No. of Steps (Dry Run Method)
+
+We don’t just say O(n) blindly. First, we count exact steps, then generalize.
+
+🔹 Example 1: Single Loop
+for (int i = 0; i < n; i++) {
+    System.out.println(i);
+}
+
+Step Count:
+
+Initialization: int i=0 → 1 step
+
+Condition check: i<n → n+1 times
+
+Increment: i++ → n times
+
+Print: System.out.println(i) → n times
+
+👉 Total steps = 1 + (n+1) + n + n = 3n + 2
+
+✅ Exact Steps: 3n + 2
+✅ Time Complexity: O(n)
+
+🔹 Example 2: Nested Loop
+for (int i = 0; i < n; i++) {        // Outer loop
+    for (int j = 0; j < n; j++) {    // Inner loop
+        System.out.println(i + "," + j);
+    }
+}
+
+Step Count:
+
+Outer loop runs n times.
+
+Inner loop runs n times for each outer loop iteration.
+
+Print runs n * n = n² times.
+
+Add overhead (initialization, condition checks, increments).
+
+👉 Total steps ≈ n² + 3n + 2
+👉 Time Complexity: O(n²)
+
+🔹 Example 3: Loop with i *= 2
+for (int i = 1; i < n; i *= 2) {
+    System.out.println(i);
+}
+
+Step Count:
+
+Values of i: 1, 2, 4, 8, ... until < n.
+
+Loop runs about log₂n times.
+
+Print executed ⌊log₂n⌋ + 1 times.
+
+👉 Total steps = log₂n + constants
+👉 Time Complexity: O(log n)
+
+📊 Summary Table
+Code Pattern	Exact Steps (approx)	Time Complexity
+Single Loop (i++)	3n + 2	O(n)
+Nested Loops (n × n)	n² + 3n + 2	O(n²)
+Loop (i *= 2)	log₂n + c	O(log n)
+
+  *********************************************************************************************************************************************************************
   
