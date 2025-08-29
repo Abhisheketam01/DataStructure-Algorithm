@@ -616,6 +616,8 @@ Time Complexity: O(n)
 
   ****************************************************************************************************************************************************************
 
+  || Day = friday 29 august 23:35 ||
+  
   Calculate Exact No. of Steps for Small Programs (Dry Run)
 🎯 Calculate Exact No. of Steps (Dry Run Method)
 
@@ -684,4 +686,103 @@ Nested Loops (n × n)	n² + 3n + 2	O(n²)
 Loop (i *= 2)	log₂n + c	O(log n)
 
   *********************************************************************************************************************************************************************
+
+  	⌛ Time Complexity of Bubble Sort (All 3 Cases)
+ChatGPT said:
+
+Alright bro 💯 let’s lock in Bubble Sort 🔥 — this is a classic interview question where they test if you know best, worst, and average case analysis.
+
+🧼 Bubble Sort Recap
+
+Repeatedly compares adjacent elements and swaps them if they are in the wrong order.
+
+With each pass, the largest element bubbles up to its correct position.
+
+📊 Time Complexity Analysis
+1️⃣ Best Case → Already Sorted (Optimized Bubble Sort)
+
+Pass once → No swaps.
+
+Comparisons: (n-1)
+
+Swaps: 0
+
+Time Complexity: O(n)
+
+👉 Only possible if we add the swapped flag optimization.
+👉 Without optimization → still O(n²) because we’ll do useless passes.
+
+2️⃣ Worst Case → Reverse Sorted
+
+Every adjacent pair swapped.
+
+Requires maximum passes.
+
+Comparisons: n(n-1)/2 ≈ O(n²)
+
+Swaps: n(n-1)/2 ≈ O(n²)
+
+Time Complexity: O(n²)
+
+3️⃣ Average Case → Random Order
+
+Roughly half elements out of order.
+
+Still quadratic.
+
+Time Complexity: O(n²)
+
+⚡ Java Code (with Optimization)
+public class BubbleSortCases {
+
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        boolean swapped;
+
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            // Optimization: stop if no swaps happened
+            if (!swapped) break;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] bestCase = {1, 2, 3, 4, 5};     // Already sorted
+        int[] avgCase  = {5, 3, 1, 4, 2};     // Random order
+        int[] worstCase = {5, 4, 3, 2, 1};    // Reverse sorted
+
+        bubbleSort(bestCase);
+        bubbleSort(avgCase);
+        bubbleSort(worstCase);
+
+        System.out.println("Sorted Best Case Array: ");
+        for (int x : bestCase) System.out.print(x + " ");
+        System.out.println("\nSorted Average Case Array: ");
+        for (int x : avgCase) System.out.print(x + " ");
+        System.out.println("\nSorted Worst Case Array: ");
+        for (int x : worstCase) System.out.print(x + " ");
+    }
+}
+
+📊 Quick Comparison Table
+Case	Comparisons	Swaps	Time Complexity	Space Complexity
+Best Case	n-1	0	O(n)	O(1)
+Average Case	~n²/2	~n²/4	O(n²)	O(1)
+Worst Case	~n²/2	~n²/2	O(n²)	O(1)
+
+⚡ Key Takeaway:
+👉 Bubble Sort is O(n²) in general, only O(n) in best case if optimized with swap-check.
+
+  **************************************************************************************************************************
   
